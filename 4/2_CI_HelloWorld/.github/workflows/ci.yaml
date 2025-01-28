@@ -1,0 +1,50 @@
+name: Java CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Java (adjust the version as needed)
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # Cache Maven dependencies to speed up builds
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: maven-${{ runner.os }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            maven-${{ runner.os }}-
+
+      # Compile the Java code
+      - name: Compile Java code
+        run: mvn compile
+
+  # Check Java code formatting using google-java-format
+  formatting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4 # v2 minimum required
+      - uses: axel-op/googlejavaformat-action@v3
+        with:
+          args: "--replace"
+          skip-commit: true
+      - name: Print diffs
+        run: git --no-pager diff --exit-code

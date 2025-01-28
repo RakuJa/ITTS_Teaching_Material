@@ -1,0 +1,29 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.itis.classe.studente</groupId>
+  <artifactId>ITIS_Maven_Example</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <name>ITIS_Maven_Example</name>
+  <!-- FIXME change it to the project's website (otherwise delete) -->
+  <url>http://www.example.com</url>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>17</maven.compiler.release>
+  </properties>
+  
+    <dependencies>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.24.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.24.1</version>
+    </dependency>
+  </dependencies>
+  
+</project>
