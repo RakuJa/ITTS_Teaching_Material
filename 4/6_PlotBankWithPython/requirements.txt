@@ -1,0 +1,6 @@
+matplotlib == 3.10.0
+polars == 1.22.0
+
+# You may have some problems with plt.show on modern python versions
+# This library should fix them
+PyQt6
