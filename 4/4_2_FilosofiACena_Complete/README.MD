@@ -1,8 +1,7 @@
 # Dining philosophers
 
 This code example represents the structure of the "dining philosophers" problem.
-This repository will be updated with the full code after the students have worked on their solution.
-**Update: [FULL CODE HERE](../4_2_FilosofiACena_Complete/)**
+This repository contains the full code.
 
 ## Problem description
 
